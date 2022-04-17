@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -75,9 +75,15 @@ const Detail = () => {
 		}
 	);
 
+	const onBack = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		navigate(-1);
+	};
+
 	return (
 		<Container>
 			<PostHeader>
+				<BackButton onClick={onBack} />
 				<TypeOfPost>{data?.postType}</TypeOfPost>
 				<PostTitle>{data?.title}</PostTitle>
 				<Author>{data?.author}</Author>
@@ -293,6 +299,11 @@ const Button = styled.button`
 	&:active {
 		filter: brightness(90%);
 	}
+`;
+const BackButton = styled.button`
+	background-image: url('/images/back.png');
+	top: 40px;
+	left: 100px;
 `;
 
 const UpdateButton = styled(Button)`

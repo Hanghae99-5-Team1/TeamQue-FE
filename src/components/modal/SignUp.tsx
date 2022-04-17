@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ChangeEvent, FormEvent, MouseEvent, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useDispatch } from 'react-redux';
@@ -31,6 +32,11 @@ const SignUp = () => {
 		onSuccess: () => {
 			alert('이메일이 발송되었습니다. 메일 인증 후 로그인 해주세요.');
 			dispatch(openModal('notSignIn'));
+		},
+		onError: (error) => {
+			if (axios.isAxiosError(error)) {
+				alert(error.response?.data.message);
+			}
 		},
 	});
 

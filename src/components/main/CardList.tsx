@@ -16,9 +16,11 @@ const CardList = ({ tabState }: CardListProps) => {
 	const { data: learnCards } = useQuery('learnCard', api.loadLearnCards, {
 		enabled: isLogin,
 	});
+
 	const { data: teachCards } = useQuery('teachCard', api.loadTeachCards, {
 		enabled: isLogin,
 	});
+
 	return (
 		<Container>
 			{tabState

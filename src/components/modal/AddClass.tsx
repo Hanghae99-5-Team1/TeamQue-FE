@@ -79,7 +79,7 @@ const AddClass = () => {
 					if (err) console.log(err, 'err');
 				});
 		} else {
-			alert('입력을 다 하고 오세요');
+			alert('작성이 완료되지 않았습니다.');
 		}
 	};
 

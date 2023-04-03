@@ -37,7 +37,7 @@
   <tr>
     <td>김우현</td>
     <td>프론트엔드</td>
-    <td>https://gitdub.com/woogod1031</td>
+    <td>https://gitdub.com/woohyun1031</td>
   </tr>
     <tr>
     <td>박진희</td>
